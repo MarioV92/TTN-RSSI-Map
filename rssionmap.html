@@ -135,6 +135,7 @@
           fullscreenControl: {
             pseudoFullscreen: true // if true, fullscreen to page width and height
           }
+        // TODO: Set LONG and LAT for Position for the reload
         }).setView([50.93058, 6.96224], 14);
         mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
         L.tileLayer(
@@ -146,7 +147,8 @@
         var DataGrp = [];
         var Stackgroup1;
         var jsonData2 = $.ajax({
-            url: "http://88.99.191.138:10040/query?db=test&q=SELECT counter,lat_sense,lon_sense,rssi,snr,gtw_id,no_gw from gps" + timerange, //  WHERE time > '2017-09-24' AND time < '2017-09-25'",
+            // TODO: Enter URL from Database and Enter Database-Name
+            url: "http://TODO:10040/query?db=TODO&q=SELECT counter,lat_sense,lon_sense,rssi,snr,gtw_id,no_gw from gps" + timerange, //  WHERE time > '2017-09-24' AND time < '2017-09-25'",
             type: 'GET',
         }).done(function(data) {
             var maprows = data["results"][0]["series"][0]["values"].length;
@@ -213,7 +215,8 @@
         var GWGroup = [];
         var Stackgroup2;
         var jsonData = $.ajax({
-            url: "http://88.99.191.138:10040/query?db=test&q=SELECT MAX(lat_gw),MAX(lon_gw) from gps" + timerange + " group by gtw_id",
+            // TODO: Enter URL from Database and Enter Database-Name
+            url: "http://TODO:10040/query?db=TODO&q=SELECT MAX(lat_gw),MAX(lon_gw) from gps" + timerange + " group by gtw_id",
             type: 'GET',
         }).done(function(data) {
             var myrows = data["results"][0]["series"].length;
